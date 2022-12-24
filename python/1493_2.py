@@ -1,17 +1,17 @@
 res=[]
+li=[0,1]
+for i in range(1,300):
+    li.append(li[-1]+i)
 for m in range(int(input())):
-    tmp=""
+    tmp=0
     p,q=map(int,input().split())
-    li=[0,1]
-    for i in range(1,200):
-        li.append(li[-1]+i)
     x1,x2,y1,y2=0,0,0,0
-    for i in range(1,200):
+    for i in range(1,300):
         if p<li[i]:
             y1=i-1-(p-li[i-1])
             x1=p-li[i-1]+1
             break
-    for i in range(1,200):
+    for i in range(1,300):
         if q<li[i]:
             y2=i-1-(q-li[i-1])
             x2=q-li[i-1]+1
