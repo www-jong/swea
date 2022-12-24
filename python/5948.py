@@ -9,7 +9,7 @@ def func(li):
         for i in li:
             tt+=ans[i]
         sm.append(tt)
-        print(li)
+
         return
     for i in range(1,8):
         if i not in li:
@@ -25,7 +25,6 @@ for m in range(int(input())):
     sm=[]
     func([])
     tmp=sorted(list(set(sm)),reverse=True)[4]
-    print(sorted(list(set(sm)),reverse=True))
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
