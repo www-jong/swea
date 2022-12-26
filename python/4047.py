@@ -4,14 +4,11 @@ for m in range(int(input())):
     dic={'S':{},'D':{},'H':{},'C':{}}
     S=input()
     for i in range(0,len(S),3):
-        print("%s %s"%(S[i],S[i+1:i+3]))
         if S[i+1:i+3] not in dic[S[i]]:
             dic[S[i]][S[i+1:i+3]]=1
         else:
-            print('!!')
             tmp="ERROR"
             break
-    print(dic)
     if tmp!="ERROR":
         tmp=str(13-len(dic["S"]))+" "+str(13-len(dic["D"]))+" "+str(13-len(dic["H"]))+" "+str(13-len(dic["C"]))
     res.append(tmp)

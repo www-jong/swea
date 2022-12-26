@@ -1,2 +1,3 @@
-a=[i for i in range(1,1000)]
-print(a[1:10:2])
+a=10**8
+b=2**30
+print("b" if a<b else "a")
