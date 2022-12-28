@@ -35,7 +35,7 @@ def go_move(x,y,z,order):
     if order=="U":
         now[2]=2
         maps[x][y]="^"
-        if x-1>=0:
+        if x-1>=1:
             if maps[x-1][y]==".":
                 now=[x-1,y,2]
                 maps[x][y]="."
@@ -51,7 +51,7 @@ def go_move(x,y,z,order):
     if order=="L":
         now[2]=1
         maps[x][y]="<"
-        if y-1>=0:
+        if y-1>=1:
             if maps[x][y-1]==".":
                 now=[x,y-1,1]
                 maps[x][y]="."
@@ -92,7 +92,6 @@ for m in range(int(input())):
         maps.append(tmpS)
     N=int(input())
     move=input()
-    print(now)
     for i in move:
         if i=="S":
             shoot(now[0],now[1],now[2])
