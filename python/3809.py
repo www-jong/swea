@@ -12,6 +12,7 @@ for m in range(int(input())):
     for i in li:
         co[i]+=1
     c=0
+    comin=min(co)
     while tmp==0:
         tmpco=[0]*10
         for i in str(c):
