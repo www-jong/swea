@@ -1,2 +1,10 @@
-a=(1,2,3,4)
-print(len(a))
+res=[]
+MAXNUM=1000001
+so=[]
+li=[1]*(MAXNUM+1)
+for i in range(2,MAXNUM):
+    if li[i]==1:
+        for j in range(i*2,MAXNUM,i):
+            li[j]=0
+        so.append(i)
+print(so)
