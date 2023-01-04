@@ -9,5 +9,12 @@ for i in range(2,MAXNUM):
             li[j]=0
         so.append(i)
         sodic[i]=1
-print(so)
-print(len(so))
+for m in range(int(input())):
+    tmp=0
+    N=int(input())
+    if N/3%1==0 and sodic[N//3]:
+        tmp+=1
+    
+    res.append(tmp)
+for i in range(len(res)):
+    print("#%d %s"%(i+1,res[i]))
