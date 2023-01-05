@@ -1,13 +1,2 @@
-res=[]
-MAXNUM=1000
-so=[]
-sodic={}
-li=[1]*(MAXNUM+1)
-for i in range(2,MAXNUM):
-    if li[i]==1:
-        for j in range(i*2,MAXNUM,i):
-            li[j]=0
-        so.append(i)
-        sodic[i]=1
-print(so)
-print(len(so))
+a=[1,2,3,4,5]
+print(*a,sep="\n")
