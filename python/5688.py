@@ -10,7 +10,7 @@ def binary_search(val):
             st=mid+1
         else:
             end=mid-1
-    return None
+    return -1
 
 for m in range(int(input())):
     tmp=""
