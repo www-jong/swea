@@ -39,8 +39,8 @@ for m in range(int(input())):
     li=[[0]*(N+1) for i in range(N+1)]
     li[N//2][N//2]=1
     li[N//2][N//2+1]=2
-    li[N//2+1][N//2]=1
-    li[N//2+1][N//2+1]=2
+    li[N//2+1][N//2]=2
+    li[N//2+1][N//2+1]=1
     
     for i in range(M):
         x,y,z=map(int,input().split())
