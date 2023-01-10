@@ -12,8 +12,8 @@ for m in range(int(input())):
             tmp="no"
             break
         else:
-            count_S=0 if (count_S+1)>=len(S) else count_S
-            count_T=0 if (count_T+1)>=len(T) else count_T
+            count_S=0 if (count_S+1)>=len(S) else count_S+1
+            count_T=0 if (count_T+1)>=len(T) else count_T+1
             count+=1
     res.append(tmp)
 for i in range(len(res)):
