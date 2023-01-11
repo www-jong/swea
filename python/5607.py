@@ -22,7 +22,7 @@ for m in range(int(input())):
     top=fac[N]%MOD
     down=((fac[N-R]%MOD)*(fac[R]%MOD))%MOD
     down_to_top=powcal(down,MOD-2)
-    tmp=(top*down_to_top%MOD)
+    tmp=((top*down_to_top)%MOD)
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
