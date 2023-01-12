@@ -3,8 +3,8 @@ for m in range(int(input())):
     tmp="Exist"
     S=input()
     for i in range(len(S)//2):
-        if "*" in S:
-            continue
+        if S[i]=='*' or S[len(S)-i-1]=='*':
+            break
         else:
             if S[i]!=S[len(S)-i-1]:
                 tmp="Not exist"
