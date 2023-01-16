@@ -20,6 +20,8 @@ for m in range(int(input())):
             idx-=1
             code=''
             co=0
+        if idx==-1:
+            break
         code=li[0][i]+code
         co+=1
     print(code2)
