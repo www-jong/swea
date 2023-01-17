@@ -9,7 +9,6 @@ for m in range(int(input())):
         s=input().rstrip('0')
         if len(s)!=0:
             li.append(s)
-    print(li)
     code=''
     co=0
     idx=7
@@ -24,7 +23,6 @@ for m in range(int(input())):
             break
         code=li[0][i]+code
         co+=1
-    print(code2)
     if (sum(code2[::2])*3+sum(code2[1::2]))%10==0:
         tmp=sum(code2)
     else:
