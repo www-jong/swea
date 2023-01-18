@@ -1,3 +1,4 @@
-a='000111100'
-b=a.rstrip('0')
-print(b)
+nickname='동원참치'
+nickname_copyed=nickname.copy()
+nickname='동원참'
+print(nickname_copyed)

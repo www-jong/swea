@@ -10,7 +10,6 @@ for m in range(int(input())):
                 dic[num]=1
         print(N)
         i+=1
-    print(f'{N}, {i}')
-    res.append(i)
+    res.append((i-1)*int(N))
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))

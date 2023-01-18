@@ -18,14 +18,11 @@ for m in range(1):
             tmps.append(i)
     orders.pop(0)
     for order in orders:
-        if order[0]=='I':
-            for i in range(int(order[2])):
-                code.insert(int(order[1])+i,order[3+i])
-        elif order[0]=='D':
-            del code[int(order[1]):int(order[1])+int(order[2])]
-        elif order[0]=='A':
-            for i in order[2:]:
-                code.append(i)
+        if order[1]>10:
+            continue
+        else:
+            if order[0]=='D':
+                
     for i in range(10):
         tmp+=str(code[i])+' '
     ans.append(tmp)
