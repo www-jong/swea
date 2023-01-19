@@ -1,5 +1,5 @@
 ans=[]
-for m in range(1):
+for m in range(10):
     tmp=''
     N=int(input())
     code=list(map(int,input().split()))

@@ -1,9 +1,19 @@
 res=[]
 for m in range(int(input())):
-    tmp=""
+    tmp=0
     S=input()
-    N=S[0]
+    N=int(S[0])
+    for i in range(1,len(S)):
+        if i==0:
+            continue
+        if N>=i:
+            print(f' N`{N}` 이 {i}보다 더 큼. N+={int(S[i])}')
+            N+=int(S[i])
 
+        else:
+            print(f'N`{N}`이 {i}보다 작음. N={i}')
+            tmp+=(i-N)
+            N+=i-N+int(S[i])
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
