@@ -1,34 +1,32 @@
-from collections import deque
+def apd(word):
+    ress=set()
+    for i in word:
+        if ord(i)>=97 and ord(i)<=122:
+            ress.add(i)
+    return ress
 
-res=0
-
-def func(dics,N,alldics):
-    global tmp
-    if len(dics)==26:
-        tmp+=1
+def dfs(sets,idx):
+    global cnt
+    if idx==N:
         return
-    for i in range(1,N+1):
-        dics
+    if len(sets|words[idx])==26:
+        cnt+=1
+    visit[idx]=True
+    dfs(sets|words[idx],idx+1)    
+    visit[idx]=False
+    dfs(sets,idx+1)
+
+res=[]
 for m in range(int(input())):
-    tmp=0
-    dic=[{}]
+    cnt=0
     N=int(input())
+    words=[]
     for i in range(N):
-        word=input()
-        tmpdic={}
-        for i in word:
-            if i not in tmpdic:
-                tmpdic[i]=1
-            else:
-                tmpdic[i]+=1
-        dic.append(tmpdic)
+        words.append(apd(input()))
 
+    visit=[0]*(N+1)
+    dfs(set(),0)
+    res.append(cnt)
     
-    q=deque()
-    q.append(1)
-    visit
-
-    res.append(tmp)
-
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))

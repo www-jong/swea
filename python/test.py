@@ -1,15 +1,8 @@
-from itertools import combinations
-def solution(answer):
-    ans=eval(answer)
-    dic={}
-    res=1
-    for item,code in ans:
-        if code not in dic:
-            dic[code]=1
-        else:
-            dic[code]+=1
-    li=[]
-    for i in dic.keys():
-        li.append(dic[i])
-        res*=dic[i]+1
-    return res-1
+def apd(word):
+    ress=set()
+    for i in word:
+        if ord(i)>=97 and ord(i)<=122:
+            ress.add(i)
+    return ress
+print(apd('apple'))
+print(apd('apple')|apd('tree'))
