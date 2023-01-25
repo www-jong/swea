@@ -1,6 +1,3 @@
-a=151566
-b=''
-for i in sorted(list(str(a)),reverse=True):
-    b+=i
-b=int(b)
+a="1234"
+b=a[:-2]+a[-1]+a[-2]
 print(b)
