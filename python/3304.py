@@ -4,16 +4,13 @@ for m in range(int(input())):
     S1,S2=map(str,input().split())
     dp=[[0]*(len(S1)+1) for i in range(len(S2)+1)]
 
-    for i in range(len(S2)+1):
-        for j in range(len(S1)+1):
+    for i in range(1,len(S2)+1):
+        for j in range(1,len(S1)+1):
             if S1[j-1]==S2[i-1]:
                 dp[i][j]=dp[i-1][j-1]+1
             else:
                 dp[i][j]=max(dp[i-1][j],dp[i][j-1])
     tmp=dp[-1][-1]
-    print(S1)
-    print(S2)
-    print(dp)
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))

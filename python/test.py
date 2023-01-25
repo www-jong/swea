@@ -1,8 +1,6 @@
-def apd(word):
-    ress=set()
-    for i in word:
-        if ord(i)>=97 and ord(i)<=122:
-            ress.add(i)
-    return ress
-print(apd('apple'))
-print(apd('apple')|apd('tree'))
+a=151566
+b=''
+for i in sorted(list(str(a)),reverse=True):
+    b+=i
+b=int(b)
+print(b)
