@@ -1,3 +1,2 @@
-a="1234"
-b=a[:-2]+a[-1]+a[-2]
-print(b)
+if not False:
+    print("a'")
