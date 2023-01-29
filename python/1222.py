@@ -22,7 +22,7 @@ for m in range(10):
             cal.append(int(i))
         elif i=='+':
             cal.append(cal.pop()+cal.pop())
-    tmp=cal
+    tmp=cal.pop()
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
