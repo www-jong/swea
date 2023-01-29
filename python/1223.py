@@ -5,6 +5,7 @@ def priority(a):
         return 2
     else:
         return 1
+
 res=[]
 for m in range(10):
     tmp=0
