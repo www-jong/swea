@@ -1,6 +1,6 @@
 from collections import deque
 res=[]
-dx=[1,1,0,0]
+dx=[1,-1,0,0]
 dy=[0,0,-1,1]
 for m in range(10):
     tmp=0
@@ -26,6 +26,8 @@ for m in range(10):
                     q.append((nx,ny))
                     print(f'!nx:{nx} ny:{ny}')
                     visit[nx][ny]=1
+        if tmp==1:
+            break
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))

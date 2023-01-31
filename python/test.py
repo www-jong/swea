@@ -1,5 +1,9 @@
-a=['a','b','c','d','e']
-b=a.pop(3)
+a=['스킨','로션','세럼']
+b=['로션','스킨','세럼']
+c=['세럼','로션','스킨']
+b.sort()
+c.sort()
+a.sort()
 print(a)
-a.insert(3,b)
-print(a)
+print(b)
+print(c)
