@@ -6,7 +6,6 @@ def go(x):
         return
     for i in range(len(graph[x])):
         tmp_val=graph[x].pop(i)
-        print(f'now{x}, i go {tmp_val}')
         go(tmp_val)
         graph[x].insert(i,tmp_val)
 
@@ -19,6 +18,5 @@ for m in range(10):
         graph[road[i]].append(road[i+1])
     go(0)
     res.append(tmp)
-    break
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
