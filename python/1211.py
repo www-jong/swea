@@ -4,17 +4,16 @@ def go(st):
     x,y=1,st
     count=1
     while x!=100:
-        if 1<=y and li[x][y-1]==1:
-            while 1<=y and li[x][y-1]==1:
+        if 2<=y and li[x][y-1]==1:
+            while 2<=y and li[x][y-1]==1:
                 y-=1
                 count+=1
-        elif y<=100 and li[x][y+1]==1:
-            while y<=100 and li[x][y+1]==1:
+        elif y<=99 and li[x][y+1]==1:
+            while y<=99 and li[x][y+1]==1:
                 y+=1
                 count+=1
         x+=1
         count+=1
-    print(f'{x}:{count}')
     if count<=tmp[1]:
         tmp=[st,count]
 
@@ -28,6 +27,6 @@ for m in range(10):
         if li[1][i]==1:
             go(i)
     
-    res.append(tmp[0])
+    res.append(tmp[0]-1)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
