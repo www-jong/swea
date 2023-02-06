@@ -1,7 +1,7 @@
 res=[]
 def go(st):
     global tmp
-    x,y=1,st
+    x,y=st,1
     count=1
     while x!=100:
         if 2<=y and li[x][y-1]==1:
