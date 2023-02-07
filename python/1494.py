@@ -2,7 +2,6 @@ res=[]
 def comb(vi,idx,su):
     if su==N/2:
         mat(vi)
-        print(vi)
         return
     for i in range(idx,N):
         vi[i]=1
@@ -26,7 +25,6 @@ for m in range(int(input())):
     tmp=10**15
     N=int(input())
     li=[]
-    visit=[]
     for i in range(N):
         li.append(list(map(int,input().split())))
     comb([0]*N,0,0)
