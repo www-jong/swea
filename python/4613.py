@@ -11,28 +11,20 @@ def calc(vi):
             types='b'
         else:
             tmp2+=(M-li[i][2])
-    print(f'tmp:{tmp}, tmp2:{tmp2}, vi:{vi}')
     tmp=min(tmp2,tmp)
     
-def go(idx,vi,count):
-
+def go(idx,vi,count,stop=0):
     if idx==N:
         if count==0:
             return
         calc(vi)
         return
-    vi[idx]=1
-    go(idx+1,vi,count+1)
+    if stop!=2:
+        vi[idx]=1
+        go(idx+1,vi,count+1,1)
     vi[idx]=0
-    go(idx+1,vi,count)
+    go(idx+1,vi,count,2 if stop==1 or stop==2 else 0)
     
-
-    '''
-    for i in range(idx,N):
-        vi[i]=1
-        go(idx+1,vi,count+1)
-        vi[i]=0
-    '''
 for m in range(int(input())):
     tmp=10**9
     N,M=map(int,input().split())
