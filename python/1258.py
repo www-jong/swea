@@ -36,7 +36,7 @@ for m in range(int(input())):
     tmpli.sort(key=lambda x:(x[0],x[1]))
     tmp+=str(len(tmpli))+" "
     for i in tmpli:
-        tmp+=str(i[1])+" "+str(i[2])+" " if i[1]!=i[2] else str(i[1])+" "
+        tmp+=str(i[1])+" "+(str(i[2])+" " if i[1]!=i[2] else "")
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))

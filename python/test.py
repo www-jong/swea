@@ -1,3 +1,4 @@
-a={"1":123,"2":151,"3":1256}
-for i in a:
-    print(f'{i} : {a[i]}')
+a=100
+for i in range(10):
+    a*=0.94
+print(a)
