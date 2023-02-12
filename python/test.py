@@ -1,4 +1,5 @@
-a=100
-for i in range(10):
-    a*=0.94
+a=[[] for i in range(20)]
+a[1].append(5)
+a[6].append(125)
+a[7].append(437)
 print(a)
