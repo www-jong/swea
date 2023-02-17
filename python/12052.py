@@ -18,11 +18,10 @@ for m in range(int(input())):
     for i in range(N):
         for j in range(M):
             if li[i][j]=='#':
-                if i<(N-1) and j<(M-1):
-                    if check(i,j):
-                        for k in range(2):
-                            for m in range(2):
-                                li[i+k][j+m]='.'
+                if i<(N-1) and j<(M-1) and check(i,j):
+                    for k in range(2):
+                        for m in range(2):
+                            li[i+k][j+m]='.'
                 else:
                     tmp="NO"
                     break
