@@ -1,6 +1,9 @@
 res=[]
 for m in range(int(input())):
-    tmp=""
+    tmp=0
+    li=list(map(int,input().split()))
+    N=int(input())
+    
     res.append(tmp)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
