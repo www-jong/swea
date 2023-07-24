@@ -1,3 +1,6 @@
-a=[1,3,5,1,3,4]
-for i,j, in a:
-    print(f'{i} : {j}')
+from itertools import combinations
+a=[0]*985436
+c=0
+for i in combinations(a,3235):
+    c+=1
+print(c)
