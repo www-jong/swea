@@ -1,6 +1,6 @@
-from itertools import combinations
-a=[0]*985436
-c=0
-for i in combinations(a,3235):
-    c+=1
-print(c)
+x,y=map(int,input().split())
+if (x+y)%3!=0:
+    print(0)
+h=((x+y)//3)
+w=y-h+1
+print(h,w)
