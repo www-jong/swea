@@ -1,15 +1,35 @@
 res=[]
 
+def fac(N):
+    res=1
+    for i in range(2,N+1):
+        res=(res*i)%p
+    return res
+def squ(n,k):
+    if k==0:
+        return 1
+    elif k==1:
+        return n
+    tmp=squ(n,k//2)
+    if k%2==0:
+        return tmp*tmp%p
+    else:
+        return tmp*tmp*n%p
+    
 for m in range(int(input())):
-    tmp=0
+    tmp=1
     x,y=map(int,input().split())
-    if (x+y)%3!=0:
+    if (x+y)%3!=0 or(x>((x+y)//3)*2) or(y>((x+y)//3)*2):
         res.append(0)
         continue
-    h=((x+y)//3)
-    w=y-h+1            # h C (w-1) 문제.
-    
-    res.append(tmp)
+    n=((x+y)//3)
+    k=y-n         
+    p=1000000007
+    top=fac(n)
+    bot=fac(n-k)*fac(k)%p
+
+
+    res.append(top*squ(bot,p-2)%p)
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
 

@@ -1,0 +1,10 @@
+s=input()
+s=s.replace("nae","name")
+s=s.replace("Lim.","Lim.\n")
+s=s.replace("gol","goal")
+s=s.replace("stedy","study")
+s=s.replace("Safi","Ssafy")
+s=s.replace("job.","job.\n")
+s=s.replace("gud.","good.\n")
+s+="."
+print(s)
