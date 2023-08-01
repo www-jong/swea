@@ -2,18 +2,14 @@ res=[]
 def flatten():
     idx=0
     while True:
-        if idx==99:
-            break
-        if boxs[idx]<=boxs[idx+1]:
+        if idx==99 or boxs[idx]<=boxs[idx+1]:
             break
         else:
             boxs[idx],boxs[idx+1]=boxs[idx+1],boxs[idx]
             idx+=1
     idx=99
     while True:
-        if idx==0:
-            break
-        if boxs[idx]>=boxs[idx-1]:
+        if idx==0 or boxs[idx]>=boxs[idx-1]:
             break
         else:
             boxs[idx],boxs[idx-1]=boxs[idx-1],boxs[idx]

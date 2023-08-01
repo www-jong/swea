@@ -1,8 +1,7 @@
 res=[]
 for m in range(int(input())):
-    tmp=""
+    N=map(int,input().split())
     li=list(map(int,input().split()))
-    tmp=max(li)
-    res.append(tmp)
+    res.append(max(li)-min(li))
 for i in range(len(res)):
     print("#%d %s"%(i+1,res[i]))
