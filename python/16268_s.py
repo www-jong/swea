@@ -1,0 +1,2 @@
+U,R=lambda:map(int,input().split()),range
+for m in R(int(input())):N,M=U();li,r,o=[[*U()] for _ in ' '*N],0,[1,-1,0,0,0];print(f'#{m+1} {max([sum([li[i//M+o[j]][i-i//M*M+o[3-j]] for j in R(5) if -1<i//M+o[j]<N and -1<i-i//M*M+o[3-j]<M]) for i in R(N*M)])}')
