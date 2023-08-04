@@ -1,27 +1,78 @@
-dic={}
-def func(val,li,idx):
-    if idx==12:
-        return
-    dic[val]=set(li)
-    func(val+3**idx,li+[idx],idx+1)
-    func(val-3**idx,li+[idx],idx+1)
-    func(val,li,idx+1)
-func(0,[],0)
-res=[]
-for m in range(int(input())):
-    tmp="yes"
-    x,y=map(int,input().split())
-    if x in dic and y in dic:
-        x=dic[x]
-        y=dic[y]
-        if len(x)+len(y)!=0:
-            z=set(i for i in range(1+max(x.union(y))))
-            if z!=x.union(y):
-                tmp="no"
-    else:
-        tmp="no"
-    #print(z)
-    #print(x.union(y))
-    res.append(tmp)
-for i in range(len(res)):
-    print("#%d %s"%(i+1,res[i]))
+def to_tr(x):
+    idx=1
+    tmp=''
+    re=''
+    x_t=func(x)
+    for i in range(1,22):
+        if x<three[i]:
+            idx=i
+            tmp='1'+len(func(three[i-1]))*'0'
+            break
+    re=[0]*(idx+1)
+    re[idx]=1
+    print(f'i:{idx}, tmp:{tmp}')
+
+
+three=[3**i for i in range(22)]
+for i in range(1,22):
+    three[i]+=three[i-1]
+print(three)
+
+def func(x): # 10진수 to 3진수수
+    b=''
+    while x>0:
+        x,mod=divmod(x,3)
+        b+=str(mod)
+    return b[::-1]
+print(func(47))
+print(to_tr(47))
+print(to_tr(39))
+print(to_tr(27))
+print(to_tr(131230))
+
+
+'''
+if 1210>1111 -> 10000
+10000-1000=2000 -> 10000-1000
+2000-100=1200 -> 10000-10000-100
+1200+10=1210
+
+ex) 43 (1120)
+5번째(81)보다 작음
+- 1234 전부 더했을경우(40)보다 크므로 5+에 뒤에 -, +1 ? ? ? ?
+- 81-43= 38만큼의 -가 발생. 우선 4-, +1 -1 ? ? ?
+- 38-27 = 11만큼의 -가 발생. 우선 3- +1 -1 -1 ? ?
+- 11-2= 2만큼의 -가 발생. 2-  +1 -1 -1 1 +1
+즉, 10000 - 1000 - 100 -10 +1
+-> 2000 -100 -10 +1
+-> 1200 -10 +1
+-> 1120 +1
+-> 1121
+
+
+48 (1210)
+- 1234 전부 더했을 경우보다 크므로 5+ 뒤에 ~~ 1 . . . .
+- 81-48=33만큼의 -, 1 -1 ...
+- 33-27 5  1 -1
+
+if 1210>1111 -> 10000
+10000-1000=2000 -> 10000-1000
+2000-100=1200 -> 10000-10000-100
+1200+10=1210
+
+if 1022<1111 -> 1000
+
+
+
+if 1012   
+1000 
+1000 +10
+1010 +1
+
+1000 +100
+1100 -10
+1020 -1
+1012
+
+idx의 결정은 [idx+1:]
+'''
