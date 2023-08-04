@@ -1,9 +1,2 @@
-res=[]
-for m in range(int(input())):
-    tmp=""
-    D,A,B,F=map(int,input().split())
-    end_time=D/(A+B)
-    tmp=end_time*F
-    res.append(tmp)
-for i in range(len(res)):
-    print("#%d %s"%(i+1,res[i]))
+i=input
+for m in range(int(i())):d,a,b,f=map(int,i().split());print(f'#{m+1}',d/(a+b)*f)
