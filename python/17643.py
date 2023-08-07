@@ -1,78 +1,21 @@
-def to_tr(x):
-    idx=1
-    tmp=''
-    re=''
-    x_t=func(x)
-    for i in range(1,22):
-        if x<three[i]:
-            idx=i
-            tmp='1'+len(func(three[i-1]))*'0'
-            break
-    re=[0]*(idx+1)
-    re[idx]=1
-    print(f'i:{idx}, tmp:{tmp}')
-
-
-three=[3**i for i in range(22)]
-for i in range(1,22):
-    three[i]+=three[i-1]
-print(three)
-
-def func(x): # 10진수 to 3진수수
-    b=''
-    while x>0:
-        x,mod=divmod(x,3)
-        b+=str(mod)
-    return b[::-1]
-print(func(47))
-print(to_tr(47))
-print(to_tr(39))
-print(to_tr(27))
-print(to_tr(131230))
-
-
-'''
-if 1210>1111 -> 10000
-10000-1000=2000 -> 10000-1000
-2000-100=1200 -> 10000-10000-100
-1200+10=1210
-
-ex) 43 (1120)
-5번째(81)보다 작음
-- 1234 전부 더했을경우(40)보다 크므로 5+에 뒤에 -, +1 ? ? ? ?
-- 81-43= 38만큼의 -가 발생. 우선 4-, +1 -1 ? ? ?
-- 38-27 = 11만큼의 -가 발생. 우선 3- +1 -1 -1 ? ?
-- 11-2= 2만큼의 -가 발생. 2-  +1 -1 -1 1 +1
-즉, 10000 - 1000 - 100 -10 +1
--> 2000 -100 -10 +1
--> 1200 -10 +1
--> 1120 +1
--> 1121
-
-
-48 (1210)
-- 1234 전부 더했을 경우보다 크므로 5+ 뒤에 ~~ 1 . . . .
-- 81-48=33만큼의 -, 1 -1 ...
-- 33-27 5  1 -1
-
-if 1210>1111 -> 10000
-10000-1000=2000 -> 10000-1000
-2000-100=1200 -> 10000-10000-100
-1200+10=1210
-
-if 1022<1111 -> 1000
-
-
-
-if 1012   
-1000 
-1000 +10
-1010 +1
-
-1000 +100
-1100 -10
-1020 -1
-1012
-
-idx의 결정은 [idx+1:]
-'''
+I,R,f=input,range,int
+def o(n):return''if n==0 else o(n//3)+str(n%3)
+def ck(n):
+ if n==0:return'0'
+ t=str(f(o(n)))
+ li,ch=[0]*(len(t)),0
+ for i in R(len(t)-1,-1,-1):
+  c=t[i]
+  if c=='1':
+   li[i]='1'
+   if ch and i==0:li.insert(0,'1')
+  elif c=='0':
+   li[i],ch='01'[ch],0
+  else:
+   li[i],ch='10'[ch],1
+   if i==0:li.insert(0,'1')
+ return''.join(li)
+for m in R(f(I())):
+ x,y=map(f,I().split())
+ s=o(f(ck(abs(x)),3)+f(ck(abs(y)),3))
+ print(f"#{m+1}",'yneos'['2'in s or'0'in s::2])
