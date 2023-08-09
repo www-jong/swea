@@ -1,2 +1,4 @@
-d,I={'ZRO':0,'ONE':1,'TWO':2,'THR':3,'FOR':4,'FIV':5,'SIX':6,'SVN':7,'EGT':8,'NIN':9},input
-for m in range(int(I())):_=I();print(f'#{m+1}',*map({v:k for k,v in d.items()}.get,sorted([*map(d.get,I().split())])))
+d,I=['ZRO','ONE','TWO','THR','FOR','FIV','SIX','SVN','EGT','NIN'],input
+for m in range(int(I())):
+    _=I()
+    print(f'#{m+1}',*sorted(*I().split(),key=lambda x:d.index(x)))
