@@ -1,0 +1,1 @@
+for m in range(int(input())):s,c=input(),'.\n';d='..#.'*len(s)+c+'.#.#'*len(s)+c+'#.';print(d+'.#.'.join(s)+d[::-1])

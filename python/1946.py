@@ -1,14 +1,5 @@
-res=[]
-for m in range(int(input())):
-    print(f'#{m+1}')
-    tmp=""
-    N=int(input())
-    for i in range(N):
-        S=list(map(str,input().split()))
-        tmp+=S[0]*(int(S[1]))
-    idx=0
-    for i in range(10,len(tmp),10):
-        print(tmp[idx:i])
-        idx=i
-    if len(tmp)%10!=0:
-        print(tmp[idx:])
+R,I=range,input
+for m in R(int(I())):
+ print(f'#{m+1}');r=''
+ for i in R(int(I())):a,b=I().split();r+=a*int(b)
+ [print(r[i:min(i+10,len(r))]) for i in R(0,len(r),10)]

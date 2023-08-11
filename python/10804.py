@@ -1,0 +1,1 @@
+for m in range(int(input())):print(f'#{m+1} ',*[dict(zip('dbpq','bdqp'))[i]for i in input()[::-1]],sep="")
