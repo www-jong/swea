@@ -1,10 +1,3 @@
-a='abc'
-b='123'
-c='abc123'
-d='ㄴㄴ'
-e='ㄴ13a'
-print(a.isalnum())
-print(b.isalnum())
-print(c.isalnum())
-print(d.isalnum())
-print(e.isalnum())
+from random import random
+for i in range(100):
+    print(int(random()*50),end=" ")
