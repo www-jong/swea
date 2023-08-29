@@ -1,24 +1,17 @@
-res=[]
-def calc(x):
-    if x:
-        left_val=calc(left[x])
-        right_val=calc(right[x])
-        return str(left_val)+tree[x]+str(right_val)
-    else:
-        return ""
-
+def g(x):
+ global y
+ if r[x]:g(r[x])
+ y+=t[x]
+ if l[x]:g(l[x])
 for m in range(10):
-    tmp=""
-    N=int(input())
-    tree,left,right=[0]*(N+1),[0]*(N+1),[0]*(N+1)
-    for i in range(N):
-        S=list(map(str,input().split()))
-        tree[int(S[0])]=S[1]
-        if len(S)>=3:
-            left[int(S[0])]=int(S[2])
-        if len(S)>=4:
-            right[int(S[0])]=int(S[3])
-    tmp=calc(1)
-    res.append(tmp)
-for i in range(len(res)):
-    print("#%d %s"%(i+1,res[i]))
+ t,r,l,y=[0]*101,[0]*101,[0]*101,''
+ for i in range(int(input())):
+  e=input().split()
+  try:
+   a=int(e[0])
+   t[a]=e[1]
+   r[a]=int(e[2])
+   l[a]=int(e[3])
+  except:pass
+ g(1)
+ print(f'#{m+1}',y)
