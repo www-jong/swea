@@ -1,45 +1,34 @@
-ans=[]
-def tolist(num):
+res=[]
+def change(count):
+    global C,ans,tmp
+    if count==int(C):
+        tmp=''.join(S)
+        if int(tmp)>int(ans):
+            ans=tmp
+        return
+    if int(tmp)==int(maxval):
+        if (int(C)-count)%2==0:
+            ans=maxval
+        return
+    for i in range(N):
+        for j in range(i+1,N):
+            S[i],S[j]=S[j],S[i]
+            tmp=''.join(S)
+            if (tmp,count) not in dic:
+                dic[(tmp,count)]=1
+                change(count+1)
+            S[i],S[j]=S[j],S[i]
     
-    return list(num)
-def tostr(li):
-    return ''.join(str(i) for i in li)
-
-def swap(num,a,b):
-    tmpli=tolist(num)
-    tmpli[a],tmpli[b]=tmpli[b],tmpli[a]
-    return tostr(tmpli)
 for m in range(int(input())):
-    tmp=""
-    num,c=map(int,input().split())
-    num=str(num)
-    maxnum=''.join(str(i) for i in sorted(list(str(num)),reverse=True))
-    check=1 if len(set(list(num)))!=len(list(num)) else 0
-    tmpnum=num
-    for i in range(c):
-        if tmpnum==maxnum:
-            if check==1:
-                continue
-            tmpnum=swap(tmpnum,len(tmpnum)-2,len(tmpnum)-1)
-        else:
-            minidx=len(tmpnum)-1
-            idx=0
-            maxnum=tmpnum[minidx]
-            while True:
-                print('%d %d'%(idx,minidx))
-                if minidx==0:
-                    break
-                if idx==minidx:
-                    idx=0
-                    minidx-=1
-                    continue
-                if maxnum>tmpnum[idx]:
-                    tmpnum=swap(tmpnum,minidx,idx)
-                    print('swap!')
-                    break
-                idx+=1
-
-    tmp=tmpnum    
-    ans.append(tmp)
-for i in range(len(ans)):
-    print("#%d %s"%(i+1,ans[i]))
+    ans,tmp="0","0"
+    S,C=map(str,input().split())
+    S=list(S)
+    N=len(S)
+    maxval=''
+    dic={}
+    for i in sorted(S,reverse=True):
+        maxval+=i
+    change(0)
+    res.append(ans)
+for i in range(len(res)):
+    print("#%d %s"%(i+1,res[i]))
