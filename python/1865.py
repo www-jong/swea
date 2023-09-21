@@ -1,25 +1,22 @@
-res=[]
-def bfs(idx,per,vi):
-    global tmp
+def dfs(v,idx,val):
+    global res
     if idx==N:
-        tmp=max(per,tmp)
+        res=max(val,res)
         return
-    if per<=tmp: # per<tmp -> 시간초과,
+    if val<=res:
         return
     for i in range(N):
-        if not vi[i]:
-            vi[i]=1
-            bfs(idx+1,per*li[idx][i]*0.01,vi)
-            vi[i]=0
-
+        if not v[i]:
+            v[i]=1
+            dfs(v,idx+1,val*li[idx][i]*0.01)
+            v[i]=0
 for m in range(int(input())):
-    tmp=-1
     N=int(input())
-    li=[]
-    visit=[0]*(N)
+    li=[list(map(int,input().split())) for i in range(N)]
+    res=0
     for i in range(N):
-        li.append(list(map(int,input().split())))
-    bfs(0,1,visit)
-    res.append(tmp)
-for i in range(len(res)):
-    print("#%d %.6f"%(i+1,res[i]*100))
+        v=[0]*N
+        v[i]=1
+        dfs(v,1,li[0][i]*0.01)
+        v[i]=0
+    print('#%d %f'%(m+1,res*100))
